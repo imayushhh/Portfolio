@@ -300,6 +300,14 @@ a:focus, button:focus {
   transform: translateY(-6px);
 }
 
+/* Hide profile photo on screens smaller than 780px */
+@media (max-width: 780px) {
+  .profile-photo {
+    display: none !important;
+  }
+}
+
+
 
 
 
@@ -350,15 +358,7 @@ a:focus, button:focus {
 }
 
 /* ---------- NAVBAR (transparent glass, fixed) ---------- */
-/* ===========================================
-   MODERN GLOW NAVBAR — AYUSH GUPTA PORTFOLIO
-   =========================================== */
-/* ===========================================
-   BOTTOM GLOW BAR NAVIGATION — AYUSH GUPTA
-   =========================================== */
-/* ===========================================
-   LARGE GLOWING NAVBAR (RIGHT ALIGN)
-   =========================================== */
+
 
 .navbar {
   position: fixed;
