@@ -425,9 +425,18 @@ button:hover,
   overflow: visible;
 }
 
+.avatar-glow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 420px;     /* matches hero-visual target */
+  height: auto;
+}
+
+
 
 .profile-photo img {
-  width: 560px;     /* adjust to your preferred size */
+  width: 460px;     /* adjust to your preferred size */
   height: auto;
   border-radius: 12px;   /* optional: soft corners */
   object-fit: contain;   /* keep original shape */
@@ -1025,6 +1034,7 @@ button:hover,
 
 /* 780px & below: hero stacks, hide nav links, tighten paddings */
 @media (max-width: 780px) {
+  
   .hero-inner {
     flex-direction: column;
     text-align: center;
@@ -1032,12 +1042,23 @@ button:hover,
     padding-top: 26px;
   }
 
-  .hero-copy {
-    order: 2;  
+    .avatar-glow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
   }
 
-  .hero-visual {
-    order: 1;   
+  .hero-copy {
+    order: 2;
+    width: 100%;
+  }
+
+    .hero-visual {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .hero-title {
@@ -1046,8 +1067,7 @@ button:hover,
   }
 
   .profile-photo {
-    width: 220px;
-    height: 220px;
+    width: 260px;
   }
 
   .nav-links {
