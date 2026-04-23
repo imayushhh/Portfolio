@@ -373,9 +373,21 @@ footer strong{background:var(--grad);-webkit-background-clip:text;-webkit-text-f
       <h2 class="sec-title"><span>Experience</span></h2>
     </div>
     <div class="timeline">
+            <div class="tl-item reveal"><div class="tl-dot"></div>
+        <div class="exp-card">
+          <div class="exp-top"><span class="exp-title">Business Systems Analyst (Co-op)</span><span class="exp-date">Sep 2025 – Present</span></div>
+          <div class="exp-company">Ontario Public Service — Ministry of Public and Business Service Delivery</div>
+          <div class="exp-loc">Toronto, ON</div>
+          <ul>
+            <li>Validated a Curam v7 → v8 data migration by developing 50+ SQL source-to-target queries using complex joins and aggregations to verify ETL outputs and ensure data accuracy and integrity.</li>
+            <li>Executed SQL-based data masking in UAT and PPE environments by updating sensitive fields in non-production datasets to support secure testing and contributing to biweekly data correction scripts.</li>
+            <li>Analyzed and refined user stories and acceptance criteria while participating in Agile ceremonies to ensure functional alignment and sprint readiness.</li>
+          </ul>
+        </div>
+      </div>
       <div class="tl-item reveal"><div class="tl-dot"></div>
         <div class="exp-card">
-          <div class="exp-top"><span class="exp-title">Data Modeler</span><span class="exp-date">Feb 2026 – Present</span></div>
+          <div class="exp-top"><span class="exp-title">Data Modeler</span><span class="exp-date">Feb 2026 – April 2026</span></div>
           <div class="exp-company">National Circle for Indigenous Agriculture and Food</div>
           <div class="exp-loc">Remote</div>
           <ul>
@@ -386,7 +398,7 @@ footer strong{background:var(--grad);-webkit-background-clip:text;-webkit-text-f
       </div>
       <div class="tl-item reveal"><div class="tl-dot"></div>
         <div class="exp-card">
-          <div class="exp-top"><span class="exp-title">Business Systems Analyst (Co-op)</span><span class="exp-date">Sep – Dec 2025</span></div>
+          <div class="exp-top"><span class="exp-title">Business Systems Analyst (Co-op)</span><span class="exp-date">Sep 2025 – Present</span></div>
           <div class="exp-company">Ontario Public Service — Ministry of Public and Business Service Delivery</div>
           <div class="exp-loc">Toronto, ON</div>
           <ul>
@@ -456,19 +468,6 @@ footer strong{background:var(--grad);-webkit-background-clip:text;-webkit-text-f
       <h2 class="sec-title"><span>Projects</span></h2>
     </div>
     <div class="proj-grid">
-      <div class="proj-card reveal">
-        <div class="proj-img"><img src="images/llm.png" alt="LLM"><div class="proj-overlay"></div></div>
-        <div class="proj-body">
-          <h3>LLM Evaluation & Benchmarking Platform</h3>
-          <p class="proj-desc">End-to-end platform to evaluate LLM reasoning and benchmark open-source models on accuracy and latency.</p>
-          <div class="proj-tags"><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">WebSockets</span><span class="tag">GCP</span><span class="tag">Hadoop</span></div>
-          <div class="proj-actions">
-            <a href="https://github.com/imayushhh/llm-evaluation-benchmarking-platform" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
-            <button class="toggle">Details</button>
-          </div>
-          <div class="details">GSM8K datasets cleaned with GCP Hadoop, stored in MongoDB Atlas. Evaluated zero-shot vs fine-tuned models; benchmarked DeepSeek and Qwen via real-time WebSocket streaming and Chart.js dashboards.</div>
-        </div>
-      </div>
     <div class="proj-card reveal">
   <div class="proj-img"><img src="images/crypto.png" alt="CryptoDash"><div class="proj-overlay"></div></div>
   <div class="proj-body">
@@ -479,20 +478,20 @@ footer strong{background:var(--grad);-webkit-background-clip:text;-webkit-text-f
       <a href="https://github.com/imayushhh/CryptoDash" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
       <button class="toggle">Details</button>
     </div>
-    <div class="details">Integrated CoinGecko, Fear & Greed Index, and NewsAPI via Spring WebFlux WebClient. Firebase Firestore powers the crypto locations finder (ATMs, exchanges, merchants). Features live price table, currency converter, exchange directory, and paginated news feed — all with demo-data fallback.</div>
+    <div class="details">Built a full-stack crypto dashboard using Spring Boot and WebFlux to integrate CoinGecko, Fear & Greed Index, NewsAPI, and an Ask AI advisor, with Firebase Firestore powering crypto locations, authenticated watchlists, and user profiles. Features live price tracking, currency conversion, exchange listings, paginated news, and demo-data fallback for resilient user experience.</div>
   </div>
   </div>
       <div class="proj-card reveal">
         <div class="proj-img"><img src="images/data.png" alt="Crypto"><div class="proj-overlay"></div></div>
         <div class="proj-body">
-          <h3>Airflow-Driven Crypto Data Pipeline</h3>
-          <p class="proj-desc">Crypto market intelligence platform ingesting live exchange and on-chain data, serving Power BI dashboards.</p>
-          <div class="proj-tags"><span class="tag">Python</span><span class="tag">Airflow</span><span class="tag">Docker</span><span class="tag">SQL Server</span><span class="tag">Power BI</span></div>
+          <h3>Crypto Market Intelligence Pipeline &amp; Dashboard</h3>
+          <p class="proj-desc">Scheduled Python ETL pipeline and Power BI dashboard for real-time crypto market intelligence.</p>
+          <div class="proj-tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">Power BI</span></div>
           <div class="proj-actions">
             <a href="https://github.com/imayushhh/ApacheDataPipeline" target="_blank" class="btn btn-ghost btn-sm">GitHub</a>
             <button class="toggle">Details</button>
           </div>
-          <div class="details">Pipeline ingesting from Binance and CoinGecko APIs via Apache Airflow in Docker. Advanced DAX: Liquidity Index, Market Health Score, Funding Rate Pressure, and Market Regime indicators.</div>
+          <div class="details">Engineered a scheduled Python ETL pipeline via GitHub Actions to ingest real-time crypto data from REST APIs into a cloud-hosted PostgreSQL database with automated schema setup, data validation, and 30-day rolling retention. Built a multi-page Power BI dashboard with custom DAX metrics to monitor market concentration, liquidity, funding-rate pressure, and leverage risk across crypto markets.</div>
         </div>
       </div>
       <div class="proj-card reveal">
