@@ -186,10 +186,10 @@ h2{font-size:clamp(1.75rem,3.2vw,2.25rem);line-height:1.2;letter-spacing:-.025em
 .tag{font-size:.78rem;font-weight:500;padding:4px 10px;border-radius:999px;background:var(--bg-alt);
   border:1px solid var(--border);color:var(--text)}
 .proj-links{display:flex;gap:8px;margin-top:auto;padding-top:4px}
-.proj.todo{border:2px dashed var(--border);box-shadow:none;background:transparent}
-.proj.todo:hover{transform:none;box-shadow:none;border-color:var(--border)}
-.todo-badge{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:6px;
-  background:#fef3c7;color:#92400e}
+.proj.wip{border:2px dashed var(--border);box-shadow:none;background:transparent}
+.proj.wip:hover{transform:none;box-shadow:none;border-color:var(--border)}
+.wip-badge{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:6px;
+  background:var(--accent-soft);color:var(--accent)}
 .muted-inline{color:var(--muted);font-weight:500}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
@@ -530,32 +530,12 @@ h2{font-size:clamp(1.75rem,3.2vw,2.25rem);line-height:1.2;letter-spacing:-.025em
         </div>
       </article>
 
-      <!-- TODO(Ayush): fill in this card, add a screenshot to images/, then remove the "todo" class and badge. -->
-      <article class="card proj todo reveal">
+      <!-- In progress: add tech tags, your role and a GitHub/demo link when ready, then drop the "wip" class and badge. -->
+      <article class="card proj wip reveal">
         <div class="proj-body">
-          <span class="todo-badge">TODO</span>
-          <h3>Power BI / Databricks Dashboard Case Study</h3>
-          <p class="proj-summary">TODO: one or two lines on the business question and the outcome.</p>
-          <dl>
-            <div><dt>Problem</dt><dd>TODO</dd></div>
-            <div><dt>What I built</dt><dd>TODO: data model, pipelines/jobs, DAX measures</dd></div>
-            <div><dt>Result</dt><dd>TODO: only real, verifiable outcomes</dd></div>
-          </dl>
-          <ul class="tags" aria-label="Tech stack"><li class="tag">Databricks</li><li class="tag">Power BI</li><li class="tag">TODO</li></ul>
-        </div>
-      </article>
-      <!-- TODO(Ayush): fill in this card (team project), add repo/demo links, then remove the "todo" class and badge. -->
-      <article class="card proj todo reveal">
-        <div class="proj-body">
-          <span class="todo-badge">TODO</span>
-          <h3>YorkU Lost &amp; Found Web App <span class="muted-inline">(team project)</span></h3>
-          <p class="proj-summary">TODO: one or two lines on the problem and what the app does.</p>
-          <dl>
-            <div><dt>Problem</dt><dd>TODO</dd></div>
-            <div><dt>My role</dt><dd>TODO: what you personally built on the team</dd></div>
-            <div><dt>Result</dt><dd>TODO</dd></div>
-          </dl>
-          <ul class="tags" aria-label="Tech stack"><li class="tag">TODO</li></ul>
+          <span class="wip-badge">In progress</span>
+          <h3>Findr U <span class="muted-inline">(team project)</span></h3>
+          <p class="proj-summary">A lost &amp; found web app for York University.</p>
         </div>
       </article>
     </div>
