@@ -186,6 +186,12 @@ h2{font-size:clamp(1.75rem,3.2vw,2.25rem);line-height:1.2;letter-spacing:-.025em
 .tag{font-size:.78rem;font-weight:500;padding:4px 10px;border-radius:999px;background:var(--bg-alt);
   border:1px solid var(--border);color:var(--text)}
 .proj-links{display:flex;gap:8px;margin-top:auto;padding-top:4px}
+.proj.todo{border:2px dashed var(--border);box-shadow:none;background:transparent}
+.proj.todo:hover{transform:none;box-shadow:none;border-color:var(--border)}
+.todo-badge{align-self:flex-start;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:3px 8px;border-radius:6px;
+  background:#fef3c7;color:#92400e}
+.muted-inline{color:var(--muted);font-weight:500}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
 /* ── Skills ── */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
@@ -423,66 +429,132 @@ h2{font-size:clamp(1.75rem,3.2vw,2.25rem);line-height:1.2;letter-spacing:-.025em
     <div class="section-head reveal">
       <span class="eyebrow">Projects</span>
       <h2>What I've built</h2>
+      <p>Data pipelines, data models and dashboards. Open a card for the problem, what I built and the result.</p>
     </div>
     <div class="proj-grid">
       <article class="card proj reveal">
-        <div class="proj-media"><img src="images/crypto.webp" width="800" height="252" loading="lazy" decoding="async" class="contain" alt="CryptoDash dashboard showing live crypto prices"></div>
-        <div class="proj-body">
-          <h3>CryptoDash: Live Crypto Dashboard</h3>
-          <p class="proj-summary">Full-stack Spring Boot web app delivering real-time crypto prices, news, exchange data, and physical crypto location finder.</p>
-          <details><summary>Details</summary><p>Built a full-stack crypto dashboard using Spring Boot and WebFlux to integrate CoinGecko, Fear &amp; Greed Index, NewsAPI, and an Ask AI advisor, with Firebase Firestore powering crypto locations, authenticated watchlists, and user profiles. Features live price tracking, currency conversion, exchange listings, paginated news, and demo-data fallback for resilient user experience.</p></details>
-          <ul class="tags"><li class="tag">Java</li><li class="tag">Spring Boot</li><li class="tag">Firebase</li><li class="tag">CoinGecko API</li><li class="tag">NewsAPI</li></ul>
-          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/CryptoDash" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></div>
-        </div>
-      </article>
-      <article class="card proj reveal">
-        <div class="proj-media"><img src="images/data.webp" width="800" height="484" loading="lazy" decoding="async" alt="Power BI crypto market intelligence dashboard"></div>
-        <div class="proj-body">
-          <h3>Crypto Market Intelligence Pipeline &amp; Dashboard</h3>
-          <p class="proj-summary">Scheduled Python ETL pipeline and Power BI dashboard for real-time crypto market intelligence.</p>
-          <details><summary>Details</summary><p>Engineered a scheduled Python ETL pipeline via GitHub Actions to ingest real-time crypto data from REST APIs into a cloud-hosted PostgreSQL database with automated schema setup, data validation, and 30-day rolling retention. Built a multi-page Power BI dashboard with custom DAX metrics to monitor market concentration, liquidity, funding-rate pressure, and leverage risk across crypto markets.</p></details>
-          <ul class="tags"><li class="tag">Python</li><li class="tag">PostgreSQL</li><li class="tag">Power BI</li></ul>
-          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/ApacheDataPipeline" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></div>
-        </div>
-      </article>
-      <article class="card proj reveal">
-        <div class="proj-media"><img src="images/Spark.webp" width="800" height="428" loading="lazy" decoding="async" class="contain" alt="Azure pipeline architecture diagram"></div>
+        <div class="proj-media"><img src="images/Spark.webp" width="800" height="428" loading="lazy" decoding="async" class="contain" alt="Architecture diagram: data sources ingested by Azure Data Factory into ADLS Gen2, transformed in Azure Databricks with MongoDB enrichment, served through Synapse to Power BI and Tableau"></div>
         <div class="proj-body">
           <h3>Azure E-Commerce Data Pipeline</h3>
-          <p class="proj-summary">Cloud-native pipeline on Azure using Medallion Architecture to ingest, transform, and serve analytics-ready data.</p>
-          <details><summary>Details</summary><p>Bronze → Silver → Gold Medallion Architecture. Data ingested via ADF, cleaned with PySpark on Databricks, exposed via Azure Synapse Serverless SQL using OPENROWSET.</p></details>
-          <ul class="tags"><li class="tag">Azure Data Factory</li><li class="tag">Databricks</li><li class="tag">PySpark</li><li class="tag">Synapse</li></ul>
-          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/Azure-End-to-End-E-Commerce-Data-Engineering-Pipeline" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></div>
+          <p class="proj-summary">End-to-end Medallion pipeline on Azure that turns raw e-commerce data into analytics-ready tables.</p>
+          <details><summary>Problem, build &amp; result</summary>
+            <dl>
+              <div><dt>Problem</dt><dd>Raw e-commerce data from HTTP and SQL sources needed to be cleaned and modeled before it could be analyzed.</dd></div>
+              <div><dt>What I built</dt><dd>A Bronze → Silver → Gold pipeline: ingestion with Azure Data Factory into ADLS Gen2, cleaning and enrichment with PySpark on Databricks, and serving through Azure Synapse Serverless SQL (OPENROWSET).</dd></div>
+              <div><dt>Result</dt><dd>A curated Gold layer that BI tools can query directly from Synapse.</dd></div>
+            </dl>
+          </details>
+          <ul class="tags" aria-label="Tech stack"><li class="tag">Azure Data Factory</li><li class="tag">Databricks</li><li class="tag">PySpark</li><li class="tag">ADLS Gen2</li><li class="tag">Synapse</li></ul>
+          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/Azure-End-to-End-E-Commerce-Data-Engineering-Pipeline" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="sr-only"> repository for Azure E-Commerce Data Pipeline</span></a></div>
         </div>
       </article>
       <article class="card proj reveal">
-        <div class="proj-media"><img src="images/Dashboard.webp" width="800" height="372" loading="lazy" decoding="async" alt="Netflix Tableau dashboard"></div>
+        <div class="proj-media"><img src="images/data.webp" width="800" height="484" loading="lazy" decoding="async" alt="Power BI dashboard showing crypto market concentration, liquidity and leverage metrics"></div>
         <div class="proj-body">
-          <h3>Netflix Tableau Dashboard</h3>
-          <p class="proj-summary">Interactive Tableau dashboard analyzing Netflix's global catalog: content distribution, genre popularity, and release trends.</p>
-          <details><summary>Details</summary><p>Cleaned Netflix dataset using SQL and Tableau Prep. Dynamic dashboards with regional filters and time-based visualizations highlighting rising international content trends.</p></details>
-          <ul class="tags"><li class="tag">Tableau</li><li class="tag">SQL</li><li class="tag">Data Viz</li><li class="tag">EDA</li></ul>
-          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/NetflixTableauProject" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></div>
+          <h3>Crypto Market Intelligence Pipeline &amp; Dashboard</h3>
+          <p class="proj-summary">Scheduled Python ETL into PostgreSQL feeding a multi-page Power BI dashboard on crypto market risk.</p>
+          <details><summary>Problem, build &amp; result</summary>
+            <dl>
+              <div><dt>Problem</dt><dd>Tracking crypto market risk needs fresh, validated data instead of manual API pulls.</dd></div>
+              <div><dt>What I built</dt><dd>A Python ETL pipeline scheduled with GitHub Actions that ingests REST API data into cloud-hosted PostgreSQL, with automated schema setup, data validation and 30-day rolling retention, plus a Power BI dashboard with custom DAX measures.</dd></div>
+              <div><dt>Result</dt><dd>Dashboards that monitor market concentration, liquidity, funding-rate pressure and leverage risk.</dd></div>
+            </dl>
+          </details>
+          <ul class="tags" aria-label="Tech stack"><li class="tag">Python</li><li class="tag">PostgreSQL</li><li class="tag">GitHub Actions</li><li class="tag">Power BI</li><li class="tag">DAX</li></ul>
+          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/ApacheDataPipeline" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="sr-only"> repository for Crypto Market Intelligence Pipeline</span></a></div>
         </div>
       </article>
       <article class="card proj reveal">
-        <div class="proj-media"><img src="images/proj_4.webp" width="768" height="422" loading="lazy" decoding="async" alt="Sales forecast time series chart"></div>
+        <div class="proj-media"><img src="images/patient.webp" width="800" height="490" loading="lazy" decoding="async" alt="Power BI dashboard of patient waitlist trends by department"></div>
         <div class="proj-body">
-          <h3>Sales Forecast: Time Series</h3>
-          <p class="proj-summary">Applied quantitative and ML models to forecast retail sales across multiple time series approaches.</p>
-          <details><summary>Details</summary><p>Compared Seasonal Naïve, Holt-Winters, ARIMA, SARIMA, and Linear Regression. Linear Regression outperformed all others due to the dataset's strong linear trend.</p></details>
-          <ul class="tags"><li class="tag">Python</li><li class="tag">ARIMA</li><li class="tag">SARIMA</li><li class="tag">Holt-Winters</li><li class="tag">Tableau</li></ul>
-          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/Sales-forcast/tree/main/sales_forecasting-main" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></div>
+          <h3>Patient Waitlist Dashboard</h3>
+          <p class="proj-summary">Power BI dashboard that shows where patient wait times build up across departments.</p>
+          <details><summary>Problem, build &amp; result</summary>
+            <dl>
+              <div><dt>Problem</dt><dd>Wait-time bottlenecks are hard to spot in raw patient waitlist data.</dd></div>
+              <div><dt>What I built</dt><dd>A Power BI report with dynamic filters and DAX measures across departments.</dd></div>
+              <div><dt>Result</dt><dd>A clear view of wait-time bottlenecks by department to support operational decisions.</dd></div>
+            </dl>
+          </details>
+          <ul class="tags" aria-label="Tech stack"><li class="tag">Power BI</li><li class="tag">DAX</li><li class="tag">Healthcare analytics</li></ul>
+          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/PatientWaitlListPowerBi" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="sr-only"> repository for Patient Waitlist Dashboard</span></a></div>
         </div>
       </article>
       <article class="card proj reveal">
-        <div class="proj-media"><img src="images/patient.webp" width="800" height="490" loading="lazy" decoding="async" alt="Patient waitlist Power BI dashboard"></div>
+        <div class="proj-media"><img src="images/Dashboard.webp" width="800" height="372" loading="lazy" decoding="async" alt="Tableau dashboard of the Netflix catalogue by region, genre and release year"></div>
         <div class="proj-body">
-          <h3>Patient Waitlist: Power BI</h3>
-          <p class="proj-summary">Power BI dashboard analyzing patient waitlist data, revealing key trends and supporting healthcare decisions.</p>
-          <details><summary>Details</summary><p>Dynamic filters and DAX measures to visualize wait-time bottlenecks across departments, delivering actionable insights for operational efficiency.</p></details>
-          <ul class="tags"><li class="tag">Power BI</li><li class="tag">DAX</li><li class="tag">Healthcare</li><li class="tag">Analytics</li></ul>
-          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/PatientWaitlListPowerBi" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a></div>
+          <h3>Netflix Catalogue Tableau Dashboard</h3>
+          <p class="proj-summary">Interactive Tableau analysis of Netflix's global catalogue by region, genre and release year.</p>
+          <details><summary>Problem, build &amp; result</summary>
+            <dl>
+              <div><dt>Problem</dt><dd>Understand what Netflix's global catalogue contains and how it is changing.</dd></div>
+              <div><dt>What I built</dt><dd>Cleaned the dataset with SQL and Tableau Prep, then built dashboards with regional filters and time-based views.</dd></div>
+              <div><dt>Result</dt><dd>Shows content distribution and genre popularity, and highlights the rise of international content.</dd></div>
+            </dl>
+          </details>
+          <ul class="tags" aria-label="Tech stack"><li class="tag">Tableau</li><li class="tag">Tableau Prep</li><li class="tag">SQL</li><li class="tag">EDA</li></ul>
+          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/NetflixTableauProject" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="sr-only"> repository for Netflix Catalogue Tableau Dashboard</span></a></div>
+        </div>
+      </article>
+      <article class="card proj reveal">
+        <div class="proj-media"><img src="images/proj_4.webp" width="768" height="422" loading="lazy" decoding="async" alt="Chart comparing retail sales forecasts from several time series models"></div>
+        <div class="proj-body">
+          <h3>Retail Sales Forecasting</h3>
+          <p class="proj-summary">Compared five time series and ML models to find the most accurate retail sales forecast.</p>
+          <details><summary>Problem, build &amp; result</summary>
+            <dl>
+              <div><dt>Problem</dt><dd>Choose the most reliable model for forecasting retail sales.</dd></div>
+              <div><dt>What I built</dt><dd>Python models for Seasonal Naïve, Holt-Winters, ARIMA, SARIMA and Linear Regression, with results visualized in Tableau.</dd></div>
+              <div><dt>Result</dt><dd>Linear Regression outperformed the other models because the data had a strong linear trend.</dd></div>
+            </dl>
+          </details>
+          <ul class="tags" aria-label="Tech stack"><li class="tag">Python</li><li class="tag">ARIMA / SARIMA</li><li class="tag">Holt-Winters</li><li class="tag">Tableau</li></ul>
+          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/Sales-forcast/tree/main/sales_forecasting-main" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="sr-only"> repository for Retail Sales Forecasting</span></a></div>
+        </div>
+      </article>
+      <article class="card proj reveal">
+        <div class="proj-media"><img src="images/crypto.webp" width="800" height="252" loading="lazy" decoding="async" class="contain" alt="CryptoDash web app showing live crypto prices and market data"></div>
+        <div class="proj-body">
+          <h3>CryptoDash: Live Crypto Web App</h3>
+          <p class="proj-summary">Full-stack Spring Boot app that brings live prices, news, exchanges and watchlists into one place.</p>
+          <details><summary>Problem, build &amp; result</summary>
+            <dl>
+              <div><dt>Problem</dt><dd>Crypto prices, news, exchange data and sentiment are spread across many separate sites.</dd></div>
+              <div><dt>What I built</dt><dd>A Spring Boot + WebFlux app integrating CoinGecko, the Fear &amp; Greed Index, NewsAPI and an Ask AI advisor, with Firebase Firestore for crypto locations, authenticated watchlists and user profiles.</dd></div>
+              <div><dt>Result</dt><dd>One dashboard with live price tracking, currency conversion, exchange listings and paginated news, with a demo-data fallback when APIs are unavailable.</dd></div>
+            </dl>
+          </details>
+          <ul class="tags" aria-label="Tech stack"><li class="tag">Java</li><li class="tag">Spring Boot</li><li class="tag">WebFlux</li><li class="tag">Firebase</li><li class="tag">CoinGecko API</li><li class="tag">NewsAPI</li></ul>
+          <div class="proj-links"><a class="btn btn-outline btn-sm" href="https://github.com/imayushhh/CryptoDash" target="_blank" rel="noopener"><svg width="14" height="14" aria-hidden="true"><use href="#i-github"/></svg>GitHub<span class="sr-only"> repository for CryptoDash</span></a></div>
+        </div>
+      </article>
+
+      <!-- TODO(Ayush): fill in this card, add a screenshot to images/, then remove the "todo" class and badge. -->
+      <article class="card proj todo reveal">
+        <div class="proj-body">
+          <span class="todo-badge">TODO</span>
+          <h3>Power BI / Databricks Dashboard Case Study</h3>
+          <p class="proj-summary">TODO: one or two lines on the business question and the outcome.</p>
+          <dl>
+            <div><dt>Problem</dt><dd>TODO</dd></div>
+            <div><dt>What I built</dt><dd>TODO: data model, pipelines/jobs, DAX measures</dd></div>
+            <div><dt>Result</dt><dd>TODO: only real, verifiable outcomes</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Tech stack"><li class="tag">Databricks</li><li class="tag">Power BI</li><li class="tag">TODO</li></ul>
+        </div>
+      </article>
+      <!-- TODO(Ayush): fill in this card (team project), add repo/demo links, then remove the "todo" class and badge. -->
+      <article class="card proj todo reveal">
+        <div class="proj-body">
+          <span class="todo-badge">TODO</span>
+          <h3>YorkU Lost &amp; Found Web App <span class="muted-inline">(team project)</span></h3>
+          <p class="proj-summary">TODO: one or two lines on the problem and what the app does.</p>
+          <dl>
+            <div><dt>Problem</dt><dd>TODO</dd></div>
+            <div><dt>My role</dt><dd>TODO: what you personally built on the team</dd></div>
+            <div><dt>Result</dt><dd>TODO</dd></div>
+          </dl>
+          <ul class="tags" aria-label="Tech stack"><li class="tag">TODO</li></ul>
         </div>
       </article>
     </div>
