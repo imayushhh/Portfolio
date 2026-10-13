@@ -197,8 +197,8 @@ h2{font-size:clamp(1.75rem,3.2vw,2.25rem);line-height:1.2;letter-spacing:-.025em
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
 .skill-group{padding:22px}
 .skill-group h3{font-size:1rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.skill-group h3 .dot{width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
-.skill-group .tag{font-size:.875rem;padding:6px 12px;background:var(--surface)}
+.skill-group .tag{font-size:.875rem;padding:6px 12px;border-radius:10px;background:var(--bg-alt)}
+.skill-group .tag-progress{border-style:dashed;color:var(--muted)}
 
 /* ── Contact ── */
 .contact-card{padding:clamp(24px,5vw,48px);display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center}
@@ -568,12 +568,35 @@ h2{font-size:clamp(1.75rem,3.2vw,2.25rem);line-height:1.2;letter-spacing:-.025em
       <span class="eyebrow">Skills</span>
       <h2>Tools I work with</h2>
     </div>
-    <div class="card skill-group reveal">
-      <ul class="tags">
-        <li class="tag">Python</li><li class="tag">SQL</li><li class="tag">Power BI</li><li class="tag">Apache Spark</li>
-        <li class="tag">Azure</li><li class="tag">Airflow</li><li class="tag">Databricks</li><li class="tag">Tableau</li>
-        <li class="tag">DAX</li><li class="tag">ETL Pipelines</li>
-      </ul>
+    <div class="skills-grid">
+      <div class="card skill-group reveal">
+        <h3>Data &amp; Analytics</h3>
+        <ul class="tags">
+          <li class="tag">SQL</li><li class="tag">Power BI (DAX)</li><li class="tag">Excel</li><li class="tag">Tableau</li>
+        </ul>
+      </div>
+      <div class="card skill-group reveal">
+        <h3>Programming</h3>
+        <ul class="tags">
+          <li class="tag">Python (Pandas, NumPy, scikit-learn)</li><li class="tag">Java</li><li class="tag">JavaScript</li>
+          <li class="tag">TypeScript</li><li class="tag">HTML</li>
+        </ul>
+      </div>
+      <div class="card skill-group reveal">
+        <h3>Data Engineering &amp; Databases</h3>
+        <ul class="tags">
+          <li class="tag">Databricks</li><li class="tag">Apache Spark</li><li class="tag">Snowflake</li>
+          <li class="tag">Azure Data Factory</li><li class="tag">Airflow</li><li class="tag">PostgreSQL</li>
+          <li class="tag">MSSQL</li><li class="tag">MongoDB</li>
+        </ul>
+      </div>
+      <div class="card skill-group reveal">
+        <h3>Cloud &amp; Certifications</h3>
+        <ul class="tags">
+          <li class="tag">Microsoft Azure Data Fundamentals (DP-900)</li>
+          <li class="tag tag-progress">AWS Data Engineer Associate (In Progress)</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -585,7 +608,11 @@ h2{font-size:clamp(1.75rem,3.2vw,2.25rem);line-height:1.2;letter-spacing:-.025em
       <div>
         <span class="eyebrow">Contact</span>
         <h2>Let's talk</h2>
-        <p>Open to collaborations, internships, and full-time opportunities.</p>
+        <p>I'm looking for full-time Data Engineer, BI Developer and Data Analyst roles in Toronto, starting August 2026. The fastest way to reach me is email.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:ayush.ag3465@gmail.com"><svg width="18" height="18" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+          <a class="btn btn-outline" href="assets/Ayush_Gupta_Resume.pdf" download><svg width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg>Download Resume</a>
+        </div>
       </div>
       <ul class="contact-list">
         <li class="row">
